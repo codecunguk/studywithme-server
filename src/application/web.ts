@@ -9,7 +9,10 @@ export const web = express();
 web.use(express.json());
 web.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: [
+      process.env.CLIENT_URL || 'http://localhost:3000',
+      'https://studywithme.akbaroke.my.id',
+    ],
     methods: ['GET', 'POST', 'PATCH', 'DELETE', 'PUT'],
   })
 );
